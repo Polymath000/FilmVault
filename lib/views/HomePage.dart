@@ -116,7 +116,6 @@ class _MovieAppState extends State<MovieApp> {
                   ),
                 ),
               ),
-              // backgroundColor: const Color(primaryColor),
               body: _getSelectedPage(),
             ),
           ),
