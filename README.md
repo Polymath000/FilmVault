@@ -32,3 +32,10 @@ The app uses `AdaptiveTheme` to provide light and dark themes. The initial theme
 
 The app uses the `upgrader` package to notify users when a new version is available.
 
+## Screenshots
+
+![Home](https://github.com/user-attachments/assets/0b030553-6f29-4a04-a673-7eeda76a95d3)
+![Search](https://github.com/user-attachments/assets/9ed33365-9284-4624-9cc8-2d14b5220991)
+![Movie Details](https://github.com/user-attachments/assets/4621bfea-b1ef-456e-8e6c-b12e4420a0ff)
+![Favorites](https://github.com/user-attachments/assets/452eb14f-624d-43f0-9bc8-aeeb8862106e)
+
