@@ -1,4 +1,4 @@
-# Movies App
+# FilmVault
 
 A Flutter application for browsing movies, featuring adaptive theming, localization (including Arabic support), and in-app upgrade alerts.
 
