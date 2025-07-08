@@ -9,6 +9,7 @@ import 'package:movies_app/Widgets/customTextField.dart';
 import 'package:movies_app/Widgets/custom_floating_action_buttom.dart';
 import 'package:movies_app/Widgets/message_error.dart';
 import 'package:movies_app/Widgets/movie_card.dart';
+import 'package:movies_app/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 class SearchPage extends StatefulWidget {
@@ -105,13 +106,13 @@ class _SearchPageState extends State<SearchPage> {
         ),
       );
     } else if (snapshot.connectionState == ConnectionState.none) {
-      return const MessageError(
-        Message: 'The Internet Lost.',
+      return  MessageError(
+        Message: S.of(context).NoInternetConnection,
       );
     } else {
       print(snapshot.data);
-      return const MessageError(
-          Message: "There was error, Please Try again Later.");
+      return  MessageError(
+          Message:  S.of(context).ThereWasAnError);
     }
   }
 }

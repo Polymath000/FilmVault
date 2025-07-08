@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/DataBase/generes_types.dart';
+import 'package:movies_app/generated/l10n.dart';
 
 class Genere extends StatelessWidget {
   const Genere({super.key, required this.index, this.isActive = false});
@@ -15,9 +16,21 @@ class Genere extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(horizontal: 22),
       child: Text(
-        genres[index]["name"],
+        getName(context),
         style: const TextStyle(fontSize: 20),
       ),
     );
+  }
+
+  String getName(BuildContext context) {
+    String name = genres[index]["name"];                    
+    if(name == "Popular") {
+      name = S.of(context).popular;
+    } else if(name == "Top Rated") {
+     name = S.of(context).topRated;
+    } else if(name == "Now Playing") {
+    name = S.of(context).nowPlaying;
+    }
+    return name;
   }
 }

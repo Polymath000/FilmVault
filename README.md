@@ -1,41 +1,34 @@
-# FilmVault
+# Movies App
 
-FilmVault is a modern movie browsing app that allows you to discover films by various categories such as:
-- Upcoming
-- Trending
-- Now Playing
-- Top Rated
-- Popular
-
-You can search for any movie, view detailed information, read user reviews, and even save your favorite films for quick access later. The app supports both light and dark modes for a comfortable viewing experience.
+A Flutter application for browsing movies, featuring adaptive theming, localization (including Arabic support), and in-app upgrade alerts.
 
 ## Features
 
-- **Browse by Category:** Explore movies by trending, upcoming, now playing, top rated, and popular.
-- **Search:** Find any movie and get detailed information including user reviews.
-- **Favorites:** Save movies you like to your personal favorites list.
-- **Light & Dark Mode:** Seamless support for both light and dark themes.
-- **User Reviews:** Read what others think about each movie.
+- **Adaptive Theming**: Light and dark mode support using [adaptive_theme](https://pub.dev/packages/adaptive_theme).
+- **Localization**: Supports multiple languages, including Arabic (RTL) using [flutter_localizations](https://docs.flutter.dev/accessibility-and-localization/internationalization).
+- **State Management**: Uses [flutter_bloc](https://pub.dev/packages/flutter_bloc) for managing language changes.
+- **Responsive UI**: Built with [flutter_screenutil](https://pub.dev/packages/flutter_screenutil) for screen size adaptation.
+- **Upgrade Alerts**: Notifies users of app updates using [upgrader](https://pub.dev/packages/upgrader).
 
-## Screenshots
+## Project Structure
 
-![Home](https://github.com/user-attachments/assets/0b030553-6f29-4a04-a673-7eeda76a95d3)
-![Search](https://github.com/user-attachments/assets/9ed33365-9284-4624-9cc8-2d14b5220991)
-![Movie Details](https://github.com/user-attachments/assets/4621bfea-b1ef-456e-8e6c-b12e4420a0ff)
-![Favorites](https://github.com/user-attachments/assets/452eb14f-624d-43f0-9bc8-aeeb8862106e)
+- `lib/views/HomePage.dart`: Main entry point for the app UI and theming.
+- `lib/Bloc/cubit/change_language_cubit.dart`: Bloc for handling language changes.
+- `lib/Widgets/Fmain_home_page_body.dart`: Main home page body widget.
+- `lib/generated/l10n.dart`: Generated localization files.
 
-## Tech Stack
+## Localization
 
-- **Flutter:** For building a beautiful and responsive cross-platform UI.
-- **Hive:** Lightweight and blazing fast key-value database for local storage (favorites, settings, etc).
-- **The Movie Database (TMDb) API:** For fetching movie data, details, and reviews.
-- **Provider:** State management for efficient and scalable app architecture.
+To add or update translations, edit the ARB files in `lib/l10n/` and regenerate with:
+```bash
+flutter pub run intl_utils:generate
+```
 
-## API
+## Theming
 
-This app uses [The Movie Database (TMDb) API](https://developer.themoviedb.org/docs/getting-started) for all movie data.
+The app uses `AdaptiveTheme` to provide light and dark themes. The initial theme is set based on the user's system preference.
 
-## GitHub
+## Upgrade Alerts
 
-Find the source code and contribute on [GitHub](https://github.com/abdelrahman6644/Movies-App)
+The app uses the `upgrader` package to notify users when a new version is available.
 

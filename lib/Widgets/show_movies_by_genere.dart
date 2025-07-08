@@ -7,6 +7,7 @@ import 'package:movies_app/Widgets/genere.dart';
 import 'package:movies_app/Widgets/message_error.dart';
 import 'package:movies_app/Widgets/show_poster_movie.dart';
 import 'package:movies_app/constants.dart';
+import 'package:movies_app/generated/l10n.dart';
 
 // ignore: must_be_immutable
 class ShowMoviesByGenere extends StatefulWidget {
@@ -101,16 +102,16 @@ class _GenereBuilderState extends State<GenereBuilder> {
                   padding: const EdgeInsets.all(30),
                   child: const Center(child: CircularProgressIndicator()));
             } else if (snapshot.hasError) {
-              return const MessageError(
-                Message: 'There Was an Error Please try Later',
+              return  MessageError(
+                Message: S.of(context).ThereWasAnError,
               );
             } else if (snapshot.connectionState == ConnectionState.none) {
-              return const MessageError(
-                Message: 'The Internet Lost',
+              return  MessageError(
+                Message: S.of(context).NoInternetConnection,
               );
             } else {
-              return const MessageError(
-                Message: 'There Was an Error Please try Later',
+              return  MessageError(
+                Message: S.of(context).ThereWasAnError,
               );
             }
           }),

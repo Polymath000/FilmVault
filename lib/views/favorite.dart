@@ -5,6 +5,7 @@ import 'package:movies_app/Models/full_movie_model.dart';
 import 'package:movies_app/Widgets/MoviePageParts/movie_view_builder.dart';
 import 'package:movies_app/Widgets/movie_card.dart';
 import 'package:movies_app/constants.dart';
+import 'package:movies_app/generated/l10n.dart';
 
 class FavoriteMovies extends StatefulWidget {
   const FavoriteMovies({super.key});
@@ -43,7 +44,7 @@ class _FavoriteMoviesState extends State<FavoriteMovies> {
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.vertical,
         slivers: [
-          const SliverAppBar(
+           SliverAppBar(
             iconTheme: IconThemeData(
               color: Colors.cyan,
             ),
@@ -52,7 +53,7 @@ class _FavoriteMoviesState extends State<FavoriteMovies> {
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
               title: Text(
-                "Favorite Movies",
+                S.of(context).FavoriteMovies,
                 style: TextStyle(
                   fontSize: 28,
                 ),
@@ -65,8 +66,8 @@ class _FavoriteMoviesState extends State<FavoriteMovies> {
               builder: (BuildContext context, Box<FullMovieModel> box,
                   Widget? child) {
                 if (box.isEmpty) {
-                  return const Center(
-                    child: Text("No Favorite Movies"),
+                  return  Center(
+                    child: Text(S.of(context).NoFMovies),
                   );
                 }
 

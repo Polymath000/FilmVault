@@ -4,6 +4,7 @@ import 'package:movies_app/Models/full_movie_model.dart';
 import 'package:movies_app/Widgets/MoviePageParts/under_page.dart';
 import 'package:movies_app/Widgets/custom_floating_action_buttom.dart';
 import 'package:movies_app/Widgets/MoviePageParts/top_of_movie_page.dart';
+import 'package:movies_app/generated/l10n.dart';
 
 class MoviePage extends StatelessWidget {
   MoviePage({super.key, required this.movie});
@@ -37,8 +38,8 @@ class MoviePage extends StatelessWidget {
               controller: scrollController,
               physics: const BouncingScrollPhysics(),
               slivers: [
-                const SliverAppBar(
-                  iconTheme: IconThemeData(
+                 SliverAppBar(
+                  iconTheme: const IconThemeData(
                     color: Colors.cyan,
                   ),
                   pinned: true,
@@ -46,8 +47,8 @@ class MoviePage extends StatelessWidget {
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
                     title: Text(
-                      'Movie Details',
-                      style: TextStyle(
+                      S.of(context).MovieDetails,
+                      style: const TextStyle(
                         fontSize: 22,
                       ),
                     ),
@@ -86,7 +87,7 @@ class MoviePage extends StatelessWidget {
                           size: 14.sp,
                         ),
                         Text(
-                          ' ${movie.runtime} minutes',
+                          ' ${movie.runtime} ${S.of(context).Minutes}',
                           style: TextStyle(
                             color: Colors.grey,
                             fontSize: 14.sp,
@@ -112,33 +113,6 @@ class MoviePage extends StatelessWidget {
               ]),
         );
       },
-    );
-  }
-
-  AppBar AppBarMoviePage() {
-    return AppBar(
-      iconTheme: const IconThemeData(
-        color: Colors.cyan,
-      ),
-      title: const Row(
-        children: [
-          Spacer(
-            flex: 5,
-          ),
-          Center(
-            child: Text(
-              'Movie Details',
-              style: TextStyle(
-                fontSize: 28,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          Spacer(
-            flex: 8,
-          )
-        ],
-      ),
     );
   }
 }

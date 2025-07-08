@@ -5,6 +5,7 @@ import 'package:movies_app/Models/review_model.dart';
 import 'package:movies_app/Services/APIs/review_api.dart';
 import 'package:movies_app/Widgets/MoviePageParts/review_messsage.dart';
 import 'package:movies_app/Widgets/message_error.dart';
+import 'package:movies_app/generated/l10n.dart';
 
 class ReviewsGroup extends StatefulWidget {
   ReviewsGroup({
@@ -58,12 +59,12 @@ class _ReviewsGroupState extends State<ReviewsGroup> {
             ],
           );
         } else if (snapshot.hasData || snapshot.data == null) {
-          return const MessageError(
-            Message: 'No Reviews Found',
+          return  MessageError(
+            Message: S.of(context).NoReviews,
           );
         } else {
-          return const MessageError(
-            Message: 'There Was an Error Please try Later',
+          return  MessageError(
+            Message: S.of(context).ThereWasAnError,
           );
         }
       },

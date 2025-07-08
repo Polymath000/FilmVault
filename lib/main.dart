@@ -13,7 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Hive.registerAdapter(FullMovieModelAdapter());
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
-
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => SearchProvider()),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/Models/full_movie_model.dart';
 import 'package:movies_app/Widgets/MoviePageParts/reviews_group.dart';
 import 'package:movies_app/Widgets/MoviePageParts/row_in_moviepage.dart';
+import 'package:movies_app/generated/l10n.dart';
 
 class UnderPage extends StatefulWidget {
   UnderPage({super.key, required this.movie});
@@ -31,7 +32,7 @@ class _UnderPageState extends State<UnderPage> {
               },
               child: RowInMoviepage(
                 index: 0,
-                text: 'About Movie',
+                text: S.of(context).AboutMovie,
                 isActive: widget.isActive,
               ),
             ),
@@ -46,7 +47,7 @@ class _UnderPageState extends State<UnderPage> {
               },
               child: RowInMoviepage(
                 index: 1,
-                text: 'Reviews',
+                text: S.of(context).Reviews,
                 isActive: !(widget.isActive),
               ),
             ),
